@@ -1,5 +1,4 @@
 Popzy.elements = [];
-const form = $("#modal-2").content.querySelector("#login-form");
 
 function Popzy(options = {}) {
   this.opt = Object.assign(
@@ -14,7 +13,7 @@ function Popzy(options = {}) {
   this.template = document.querySelector(`#${this.opt.templateId}`);
 
   if (!this.template) {
-    console.error(`#${this.opt.templateId} does not exits`);
+    console.error(`#{this.opt.templateId} does not exits`);
     return;
   }
   const { closeMethods } = this.opt;
@@ -23,8 +22,6 @@ function Popzy(options = {}) {
   this._allowEscapeClose = closeMethods.includes("escape");
 
   this._footerButtons = [];
-
-  this._handleEscapeKey = this._handleEscapeKey.bind(this);
 }
 
 Popzy.prototype._build = function () {
